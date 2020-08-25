@@ -21,7 +21,6 @@ class UserFragment : Fragment() {
         //一定要设置lifecycleOwner,这一行代码是让XML中的LiveData和Observer建立观察链接
         //绑定每一次LiveData的更新
         binding.lifecycleOwner = viewLifecycleOwner
-
         return binding.root
     }
 

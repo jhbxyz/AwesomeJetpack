@@ -172,7 +172,7 @@ E/ActivityLifecycleObserver: onLifecycleChanged  owner = com.jhb.awesomejetpack.
 
  Android Activity 生命周期的状态和事件看这个图就能说明
 
-
+![](https://raw.githubusercontent.com/jhbxyz/AwesomeJetpack/master/images/Lifecycle_1.jpg)
 
 ##### 3.了解上面的基本内容，就进行具体具体的源码分析
 
@@ -340,6 +340,8 @@ static State getStateAfter(Event event) {
 ```
 
 上面代码结合这个图看，食用效果更加
+
+![](https://raw.githubusercontent.com/jhbxyz/AwesomeJetpack/master/images/Lifecycle_1.jpg)
 
 不同的Lifecycle.Event的生命周期状态对Lifecycle.State的当前状态的取值。
 

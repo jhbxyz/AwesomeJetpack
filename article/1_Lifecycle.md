@@ -1,10 +1,10 @@
-# Android Jetpack组件（一）Lifecycle基本使用和原理分析
+# Android Jetpack组件Lifecycle基本使用和原理分析
 
 这是Jetpack系列的第一篇文章，先看一下Jetpack的背景历史，总体了解一下什么是Jetpack。
 
 ### 1.Jetpack的历史背景
 
-Goole I/O 2017大会时推出了 [Android Architecture Component（AAC](https://developer.android.com/topic/libraries/architecture/index.html)），它包括了[Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle.html)、[LiveData](https://developer.android.com/topic/libraries/architecture/livedata.html)、[ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel.html)、Room。
+Goole I/O 2017大会时推出了 [Android Architecture Component（AAC](https://developer.android.com/topic/libraries/architecture/index.html)），它包括了[Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle.html)、[LiveData](https://developer.android.com/topic/libraries/architecture/livedata.html)、[ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel.html)、[Room](https://developer.android.com/topic/libraries/architecture/room)。
 
 Goole I/O 2018大会上，用AndroidX替代了Android Support Library，并在Android Architecture Component的基础上发布了Android Jetpack，AndroidX也是属于Android [Jetpack](https://developer.android.com/jetpack)。
 
@@ -53,7 +53,7 @@ interface ILifecycleObserver : LifecycleObserver {
 }
 ```
 
-注意：当然你也可以不实现LifecycleObserver而是实现DefaultLifecycleObserver接口，Google官方更推荐我们使用 **DefaultLifecycleObserver** 类
+**注意：**当然你也可以不实现LifecycleObserver而是实现DefaultLifecycleObserver接口，Google官方更推荐我们使用 **DefaultLifecycleObserver** 类
 
 在build.gradle 中依赖
 
@@ -166,13 +166,11 @@ E/ActivityLifecycleObserver: onLifecycleChanged  owner = com.jhb.awesomejetpack.
 
 * LifecycleObserver：观察者，观察LifecycleOwner的生命周期
 
-
-
 ##### 2.先提一下Event和State之间的关系
 
  Android Activity 生命周期的状态和事件看这个图就能说明
 
-![](https://raw.githubusercontent.com/jhbxyz/AwesomeJetpack/master/images/Lifecycle_1.jpg)
+![](https://github.com/jhbxyz/AwesomeJetpack/blob/master/images/Lifecycle_1.jpg)
 
 ##### 3.了解上面的基本内容，就进行具体具体的源码分析
 
@@ -341,7 +339,7 @@ static State getStateAfter(Event event) {
 
 上面代码结合这个图看，食用效果更加
 
-![](https://raw.githubusercontent.com/jhbxyz/AwesomeJetpack/master/images/Lifecycle_1.jpg)
+![](https://github.com/jhbxyz/AwesomeJetpack/blob/master/images/Lifecycle_1.jpg)
 
 不同的Lifecycle.Event的生命周期状态对Lifecycle.State的当前状态的取值。
 
@@ -662,9 +660,9 @@ static class MethodReference {
 
 当然其他mCallType的值也会被反射调用
 
-### 5.总结来在回顾当初抛出的问题
+### 5.总结
 
-**当初抛出问题：**
+**在来回顾当初抛出的问题**
 
 - Lifecycle是怎样感知生命周期的？
   * 通过ReportFragment方法在其自己的生命周期方法中调用dispatch(Lifecycle.Event.XXX);方法

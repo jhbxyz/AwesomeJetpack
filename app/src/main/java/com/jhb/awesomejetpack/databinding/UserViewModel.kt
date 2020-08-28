@@ -1,4 +1,4 @@
-package com.jhb.awesomejetpack.livedata
+package com.jhb.awesomejetpack.databinding
 
 import android.app.Application
 import androidx.databinding.ObservableField

@@ -29,24 +29,6 @@
 
   
 
-### 1.[Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle.html)
-
-感知其他组件（主要指Activity 、Fragment）生命周期
-
-* Lifecycle
-* LifecycleOwner
-* LifecycleObserver
-* Lifecycle.Event：Activity／Fragment生命周期的事件一一对应
-* Lifecycle.State 状态 当前组件的生命周期状态(INITIALIZED, DESTROYED, CREATED, STARTED, RESUMED)
-
-### 2.LiveData
-
-持有可被观察数据的类，LiveData是有生命周期感知能力的
-
-
-
-### 3.ViewModel
-
 
 
 

@@ -1,4 +1,4 @@
-package com.jhb.awesomejetpack.livedata
+package com.jhb.awesomejetpack.databinding
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.jhb.awesomejetpack.R
-import com.jhb.awesomejetpack.databinding.ActivityUserBinding
 
 class UserFragment : Fragment() {
 

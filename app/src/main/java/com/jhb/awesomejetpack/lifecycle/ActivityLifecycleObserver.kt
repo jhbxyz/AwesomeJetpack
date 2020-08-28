@@ -11,28 +11,28 @@ import com.jhb.awesomejetpack.util.logWithTag
  */
 class ActivityLifecycleObserver : ILifecycleObserver {
 
-    var mTag = javaClass.simpleName
-    override fun onCreate() {
+    private var mTag = javaClass.simpleName
+    override fun onCreate(owner: LifecycleOwner) {
         "onCreate ".logWithTag(mTag)
     }
 
-    override fun onStart() {
+    override fun onStart(owner: LifecycleOwner) {
         "onStart ".logWithTag(mTag)
     }
 
-    override fun onResume() {
+    override fun onResume(owner: LifecycleOwner) {
         "onResume ".logWithTag(mTag)
     }
 
-    override fun onPause() {
+    override fun onPause(owner: LifecycleOwner) {
         "onPause ".logWithTag(mTag)
     }
 
-    override fun onStop() {
+    override fun onStop(owner: LifecycleOwner) {
         "onStop ".logWithTag(mTag)
     }
 
-    override fun onDestroy() {
+    override fun onDestroy(owner: LifecycleOwner) {
         "onDestroy ".logWithTag(mTag)
     }
 

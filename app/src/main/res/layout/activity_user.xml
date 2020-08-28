@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.jhb.awesomejetpack.livedata.UserViewModel" />
+            type="com.jhb.awesomejetpack.databinding.UserViewModel" />
 
     </data>
 

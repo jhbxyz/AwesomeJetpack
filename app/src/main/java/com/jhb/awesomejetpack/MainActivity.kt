@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.jhb.awesomejetpack.base.BaseActivity
-import com.jhb.awesomejetpack.livedata.UserViewModel
+import com.jhb.awesomejetpack.databinding.UserViewModel
 
 class MainActivity : BaseActivity() {
 

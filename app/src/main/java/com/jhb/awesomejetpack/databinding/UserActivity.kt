@@ -1,11 +1,10 @@
-package com.jhb.awesomejetpack.livedata
+package com.jhb.awesomejetpack.databinding
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.jhb.awesomejetpack.R
 import com.jhb.awesomejetpack.base.BaseActivity
-import com.jhb.awesomejetpack.databinding.ActivityUserBinding
 
 class UserActivity : BaseActivity() {
 

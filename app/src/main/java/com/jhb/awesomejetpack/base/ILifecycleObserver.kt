@@ -13,22 +13,22 @@ import com.jhb.awesomejetpack.util.logWithTag
 interface ILifecycleObserver : LifecycleObserver {
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun onCreate()
+    fun onCreate(owner: LifecycleOwner)
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    fun onStart()
+    fun onStart(owner: LifecycleOwner)
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    fun onResume()
+    fun onResume(owner: LifecycleOwner)
 
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
-    fun onPause()
+    fun onPause(owner: LifecycleOwner)
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    fun onStop()
+    fun onStop(owner: LifecycleOwner)
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    fun onDestroy()
+    fun onDestroy(owner: LifecycleOwner)
 
     @OnLifecycleEvent(Lifecycle.Event.ON_ANY)
     fun onLifecycleChanged(owner: LifecycleOwner, event: Lifecycle.Event)

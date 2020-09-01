@@ -15,7 +15,7 @@ data class User(var userId: String = UUID.randomUUID().toString(), var userName:
 class UserViewModel : ViewModel() {
 
     private val userBean = User(userName = "刀锋之影")
-    // 私有的 user LIveData
+    // 私有的 user LiveData
     private val _user = MutableLiveData<User>().apply {
         value = userBean
     }

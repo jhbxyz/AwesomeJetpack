@@ -14,7 +14,8 @@ import com.jhb.awesomejetpack.util.log
 class ViewModelActivity : AppCompatActivity() {
 
     //初始化 UserViewModel 通过 ViewModelProvider
-    private val userViewModel by lazy { ViewModelProvider(this)[UserViewModel::class.java] }
+//    private val userViewModel by lazy { ViewModelProvider(this)[UserViewModel::class.java] }
+    private val userViewModel by lazy { ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(application))[UserViewModel::class.java] }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,5 +31,9 @@ class ViewModelActivity : AppCompatActivity() {
         button.setOnClickListener {
             userViewModel.updateUser()
         }
+    }
+
+    override fun onRetainCustomNonConfigurationInstance(): Any? {
+        return super.onRetainCustomNonConfigurationInstance()
     }
 }

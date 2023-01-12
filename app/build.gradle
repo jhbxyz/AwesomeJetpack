@@ -46,7 +46,14 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
 
-
+    //Flow 协程库
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.15"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.15"
+    //Flow Scope
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+    //ktx的扩展库，不是必须的，可以简化代码的书写
+    implementation "androidx.activity:activity-ktx:1.0.0"
+    implementation "androidx.fragment:fragment-ktx:1.0.0"
 
 
 

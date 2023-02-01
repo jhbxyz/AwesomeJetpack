@@ -8,9 +8,7 @@ import com.jhb.awesomejetpack.R
 import com.jhb.awesomejetpack.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_flow.*
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.FlowCollector
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.onSubscription
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.coroutines.EmptyCoroutineContext
@@ -25,30 +23,38 @@ class FlowActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flow)
-        flowVM.liveData.observe(this){
+        // flowVM.liveData.observe(this) {
+        //
+        // }
 
-        }
 
-
+        // lifecycleScope.launch {
+        //     repeatOnLifecycle(Lifecycle.State.STARTED) {
+        //         flowVM.stateFlow.collect {
+        //             tvContent.text = "$it"
+        //             println("jjjj $it")
+        //         }
+        //     }
+        // }
+        // liveData.observe(this) {
+        //     println("jjjj observe  = $it")
+        // }
         lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                flowVM.stateFlow.collect {
-                    tvContent.text = "$it"
-                    println("jjjj $it")
-                }
+            flowVM.testShare.collect {
+                println("jjjjj = $it")
             }
-        }
-        liveData.observe(this){
-            println("jjjj observe  = $it")
         }
     }
 
+    var count = 0
     fun start(v: View) {
         // launch()
         // launchWhenStarted()
         // repeatOnLifecycle()
-
-        flowVM.startTime()
+        // flowVM.startTime()
+        lifecycleScope.launch {
+            flowVM.testShare.emit(count++)
+        }
     }
 
 
@@ -63,7 +69,11 @@ class FlowActivity : BaseActivity() {
 
     }
 
+    val baseF = MutableStateFlow<BaseFlow>(BaseFlow())
+
     private fun repeatOnLifecycle() {
+
+
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 flowVM.timeFlow.collect {
@@ -71,6 +81,10 @@ class FlowActivity : BaseActivity() {
                     println("jjjj $it")
                 }
             }
+            baseF.collect {
+
+            }
+
         }
     }
 

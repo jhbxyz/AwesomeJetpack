@@ -17,7 +17,8 @@ class FirstFragment : Fragment() {
     private val TAG = javaClass.simpleName
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val userViewModel = ViewModelProvider(activity as ViewModelStoreOwner)[UserViewModel::class.java]
+
+        val userViewModel = ViewModelProvider.NewInstanceFactory().create(UserViewModel::class.java)
         "userViewModel = $userViewModel".logWithTag(TAG)
         return super.onCreateView(inflater, container, savedInstanceState)
     }

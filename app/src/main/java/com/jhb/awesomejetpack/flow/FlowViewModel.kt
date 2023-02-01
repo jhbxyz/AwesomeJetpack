@@ -2,7 +2,6 @@ package com.jhb.awesomejetpack.flow
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import java.util.*
@@ -11,6 +10,8 @@ import java.util.*
  * @author jianghaibo
  * @date 2023/1/10
  */
+class BaseFlow()
+
 class FlowViewModel : ViewModel() {
 
     val liveData = MutableLiveData<CharSequence>()
@@ -30,7 +31,7 @@ class FlowViewModel : ViewModel() {
     private val _sta = MutableStateFlow(0)
     val stateFlow = _sta
 
-    val timeFlow2StateIn = timeFlow.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
+    // val timeFlow2StateIn = timeFlow.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
     fun startTime() {
         val timer = Timer()
@@ -45,6 +46,7 @@ class FlowViewModel : ViewModel() {
     private val clickStateFlow = MutableStateFlow(0)
     val clickCountFlow = clickStateFlow.asStateFlow()
 
+    val testShare = MutableSharedFlow<Int>()
 
 
 }

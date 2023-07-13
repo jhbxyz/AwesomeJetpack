@@ -20,6 +20,7 @@ fun String.log(logEnum: LogEnum = LogEnum.ERROR) {
     }
 }
 
+
 fun String.logWithTag(tag: String, logEnum: LogEnum = LogEnum.ERROR) {
     if (BuildConfig.DEBUG) {
         when (logEnum) {

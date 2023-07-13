@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "com.google.protobuf"
 
 android {
     compileSdkVersion 29
@@ -41,6 +42,30 @@ android {
 
 }
 
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.1.0'
+    }
+    plugins {
+        javalite {
+            artifact = 'com.google.protobuf:protoc-gen-javalite:3.0.0'
+        }
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                remove java
+            }
+
+            task.plugins {
+                javalite {}
+            }
+        }
+    }
+}
+
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -63,6 +88,11 @@ dependencies {
     implementation "androidx.activity:activity-ktx:1.0.0"
     implementation "androidx.fragment:fragment-ktx:1.1.0"
 
+    //Datastore
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+
+    implementation 'androidx.datastore:datastore:1.0.0'
+    implementation 'com.google.protobuf:protobuf-lite:3.0.0'
 
     implementation 'com.alibaba:fastjson:1.1.72.android'
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'

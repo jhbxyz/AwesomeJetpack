@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.jhb.awesomejetpack.bean;
+
+message UserInfo {
+    string name = 1;
+    int32 age = 2;
+    string email = 3;
+}
